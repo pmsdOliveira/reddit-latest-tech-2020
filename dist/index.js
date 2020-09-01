@@ -27,6 +27,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
             resolvers: [post_1.PostResolver],
             validate: false,
         }),
+        context: () => ({ em: orm.em }),
     });
     apolloServer.applyMiddleware({ app });
     app.listen(4000, () => {

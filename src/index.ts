@@ -17,6 +17,7 @@ const main = async () => {
       resolvers: [PostResolver],
       validate: false,
     }),
+    context: () => ({ em: orm.em }),
   });
 
   apolloServer.applyMiddleware({ app });
